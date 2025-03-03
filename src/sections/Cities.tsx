@@ -1,5 +1,5 @@
 import MainButton from "../components/MainButton";
-import { cities } from "../utils/cities";
+import { cities } from "../utils/data/cities";
 
 const Cities = () => {
   return (

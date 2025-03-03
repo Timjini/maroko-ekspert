@@ -21,6 +21,23 @@ const resources = {
   },
 };
 
+const section = {
+    en: {
+        translation: {
+          welcome: "Welcome to our Travel Agency!",
+          button_book: "Book Now",
+          description: "Explore Morocco with the best tours from Poland."
+        },
+      },
+      pl: {
+        translation: {
+          welcome: "Witamy w naszej agencji turystycznej!",
+          button_book: "Zarezerwuj teraz",
+          description: "Odkrywaj Maroko dzięki najlepszym wycieczkom z Polski."
+        },
+      },
+}
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
