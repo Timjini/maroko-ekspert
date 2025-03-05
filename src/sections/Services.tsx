@@ -2,8 +2,8 @@ import {services} from '../utils/data/services';
 
 const Services = () => {
   return (
-    <section id="services" className="py-12 bg-gray-100">
-      <div className="container item-center mx-auto  max-w-screen-xl grid grid-cols-1 lg:grid-cols-3 items-center min-h-[100vh]">
+    <section className="py-12 bg-gray-100">
+      <div id="services" className="container item-center mx-auto  max-w-screen-xl grid grid-cols-1 lg:grid-cols-3 items-center min-h-[100vh]">
         <div>
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 uppercase">Our Services</h2>
         </div>

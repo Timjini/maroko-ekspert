@@ -14,8 +14,8 @@ const Layout = () => {
       {/* <Home /> */}
       <Hero />
       <Solutions />
-      <Cities />
       <Services />
+      <Cities />
       <About  toggleModal={toggleModal}/>
       <Footer />
       <ContactModal isOpen={isOpen} toggleModal={toggleModal} />
