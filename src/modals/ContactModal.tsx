@@ -9,7 +9,6 @@ import PhoneInput from "../components/PhoneInput";
 export const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 
-// Define form schema using Zod
 const formSchema = z.object({
   title: z.string().default("Maroko Ekspert Form"),
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -19,7 +18,6 @@ const formSchema = z.object({
   status: z.string().default("new"),
 });
 
-// Define TypeScript types based on schema
 type FormData = z.infer<typeof formSchema>;
 
 interface FormModalProps {
@@ -39,7 +37,6 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
   });
 
 
-  // Handle form submission
   const onSubmit = async (data: FormData) => {
     try {
       const response = await axios.post(`${BACKEND_URL}/forms`, data, {
@@ -80,7 +77,6 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
             </h2>
 
             <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
-              {/* Name Field */}
               <div>
                 <label htmlFor="name" className="block text-left text-gray-500 text-sm">
                   Name
@@ -95,7 +91,6 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
                 {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
               </div>
 
-              {/* Email Field */}
               <div>
                 <label htmlFor="email" className="block text-left text-gray-500 text-sm">
                   Email
@@ -110,11 +105,9 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
                 {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
               </div>
 
-              {/* Phone Input */}
               <PhoneInput onChange={(value) => setValue("phone", value)} />
               {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
 
-              {/* Message Field */}
               <div>
                 <label htmlFor="message" className="block text-left text-gray-500 text-sm">
                   Message
@@ -129,7 +122,6 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
                 {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
               </div>
 
-              {/* Submit Button */}
               <div className="flex justify-center">
                 {isSubmitting ? (
                   <MainButton title="Sending..."/>

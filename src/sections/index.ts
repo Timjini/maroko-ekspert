@@ -1,4 +1,3 @@
-// src/sections/index.ts
 export { default as Nav } from "./Nav";
 export { default as Home } from "./Home";
 export { default as Hero } from "./Hero";

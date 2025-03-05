@@ -3,7 +3,6 @@ import React, { useState } from "react";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Smooth scroll function
   const handleScroll = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -12,7 +11,7 @@ const Navbar = () => {
         block: "start",
       });
     }
-    setIsMenuOpen(false); // Close the menu after clicking a link
+    setIsMenuOpen(false);
   };
 
   const nav: readonly string[] = ["services", "tours", "about"];
@@ -26,7 +25,6 @@ const Navbar = () => {
           alt="Maroko Ekspert Logo"
         />
 
-        {/* Hamburger Menu Icon (Mobile Only) */}
         <button
           className="md:hidden focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -47,7 +45,6 @@ const Navbar = () => {
           </svg>
         </button>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex">
           {nav.map((item, index) => (
             <a
@@ -65,7 +62,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu (Conditionally Rendered) */}
       {isMenuOpen && (
         <div className="md:hidden bg-[#C19B77] mt-4">
           {nav.map((item, index) => (

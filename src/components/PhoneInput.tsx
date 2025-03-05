@@ -50,7 +50,6 @@ const PhoneInput: React.FC<PhoneInputProps> = ({ onChange }) => {
         Phone number
       </label>
       <div className="relative mt-2 text-gray-500">
-        {/* Country Code Dropdown */}
         <div className="absolute w-24 inset-y-0 left-0 flex items-center border-r pr-3">
           <select
             className="text-sm w-24 outline-none rounded-lg h-full pl-3 pr-2 bg-transparent"
@@ -65,7 +64,6 @@ const PhoneInput: React.FC<PhoneInputProps> = ({ onChange }) => {
           </select>
         </div>
 
-        {/* Phone Number Input */}
         <input
           type="tel"
           placeholder="123 456 7890"
