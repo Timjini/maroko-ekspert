@@ -27,7 +27,7 @@ html, body {
   padding: 0.8em 2em;
   background: var(--bg);
   transition: 0.2s;
-  margin: 20px;
+  margin-top: 20px;
 }
 
 .mainBtn:hover {
@@ -40,4 +40,13 @@ html, body {
 .mainBtn:active {
   transform: translate(0);
   box-shadow: none;
+}
+
+/* input */
+.container{
+  padding:10px;
+}
+
+.divPadding{
+  padding: 0.8em 2em;
 }

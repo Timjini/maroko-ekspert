@@ -1,4 +1,4 @@
-import LanguageSwitcher from "../utils/LanguageSwitcher";
+// import LanguageSwitcher from "../utils/LanguageSwitcher";
 
 const Nav = () => {
     return (
@@ -7,7 +7,7 @@ const Nav = () => {
             <div className="container mx-auto flex justify-between items-center">
                 <img src="https://maroko-ekspert.pl/wp-content/uploads/2024/04/web-lightmaroko-ekspert.png" className="h-12 md:h-18  w-auto" />
                 <div>
-                <LanguageSwitcher />
+                {/* <LanguageSwitcher /> */}
                 <a href="#hero" className="mx-4">Home</a>
                 <a href="#services" className="mx-4">Services</a>
                 <a href="#tours" className="mx-4">Tours</a>

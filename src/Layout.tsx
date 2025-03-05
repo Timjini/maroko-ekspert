@@ -1,17 +1,25 @@
-import { Nav, Home, Hero, Section, Solutions, Services, Cities, About, Footer } from './sections';
+import { useState } from 'react';
+import { Nav, Hero, Solutions, Services, Cities, About, Footer } from './sections';
+import ContactModal from './modals/ContactModal';
 
 const Layout = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleModal = () => {
+    console.log("clicked")
+    setIsOpen(prevState => !prevState);
+  };
   return (
     <>
       <Nav />
-      <Home />
+      {/* <Home /> */}
       <Hero />
-      <Section />
       <Solutions />
-      <Services />
       <Cities />
-      <About />
+      <Services />
+      <About  toggleModal={toggleModal}/>
       <Footer />
+      <ContactModal isOpen={isOpen} toggleModal={toggleModal} />
+
     </>
   );
 };
