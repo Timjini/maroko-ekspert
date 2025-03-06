@@ -82,6 +82,7 @@ const Navbar = () => {
               {t(`nav.${key}`)}
             </a>
           ))}
+          <LanguageSwitcher />
         </div>
       )}
     </nav>
