@@ -57,18 +57,18 @@ const resources = {
       },
       cities : [
         {
-          name: 'Agadir',
-          description: 'Explore the beauty of Agadir with expert local guides.',
+          name: 'EXCURSIONS AGADIR',
+          description: "Discover Agadir, Morocco's vibrant excursions. From ancient cities to desert adventures, explore unforgettable landscapes. Book now!",
           image: 'https://maroko-ekspert.pl/wp-content/uploads/2024/05/Agadir-Taghazoute-scaled.jpg',
         },
         {
-          name: 'Marrakech',
-          description: 'Discover the vibrant culture of Marrakech and its surroundings.',
+          name: 'EXCURSIONS MARRAKECH',
+          description: "Experience Marrakech's magic with our excursions. From historic sites to vibrant markets, explore the heart of Morocco. Book now!",
           image: 'https://maroko-ekspert.pl/wp-content/uploads/2024/05/AdobeStock_176119828-min-scaled.jpeg',
         },
         {
-          name: 'Essaouira',
-          description: 'Visit the stunning coastal town of Essaouira with our expert guides.',
+          name: 'NEW ADVENTURES',
+          description: 'Experience adventure with our unique packages: horseback and camel rides, a fantasy dinner night, and desert trips. Thrills and unforgettable memories await!',
           image: 'https://maroko-ekspert.pl/wp-content/uploads/2024/05/essaouiar2.jpeg',
         },
       ],
@@ -149,18 +149,18 @@ const resources = {
       },
       cities: [
         {
-          name: "Agadir",
-          description: "Odkryj piękno Agadiru z doświadczonymi lokalnymi przewodnikami.",
+          name: "Wycieczki z Agadiru",
+          description: "Odkryj Agadir, tętniące życiem wycieczki po Maroku. Od starożytnych miast po pustynne przygody – odkrywaj niezapomniane krajobrazy. Rezerwuj teraz!",
           image: "https://maroko-ekspert.pl/wp-content/uploads/2024/05/Agadir-Taghazoute-scaled.jpg",
         },
         {
-          name: "Marrakesz",
-          description: "Poznaj tętniącą życiem kulturę Marrakeszu i jego okolic.",
+          name: "Wycieczki z Marakeszu",
+          description: "Poczuj magię Marrakeszu podczas naszych wycieczek. Od zabytków po tętniące życiem rynki – odkryj serce Maroka. Rezerwuj teraz!",
           image: "https://maroko-ekspert.pl/wp-content/uploads/2024/05/AdobeStock_176119828-min-scaled.jpeg",
         },
         {
-          name: "Essaouira",
-          description: "Odwiedź malownicze nadmorskie miasteczko Essaouira z naszymi ekspertami.",
+          name: "ATRAKCJE",
+          description: "Przeżyj wyjątkowe przygody dzięki naszym unikatowym pakietom: przejażdżki konne i na wielbłądach, fantastyczna kolacja i wycieczki po pustyni. Dreszczyk emocji i niezapomniane wspomnienia czekają!",
           image: "https://maroko-ekspert.pl/wp-content/uploads/2024/05/essaouiar2.jpeg",
         },
       ],

@@ -17,7 +17,7 @@ const Cities = () => {
                 className="w-full h-48 object-cover rounded-lg"
               />
               <h3 className="text-xl font-semibold mt-4">{city.name}</h3>
-              <p className="mt-4">{city.description}</p>
+              <p className="mt-4 text-balance">{city.description}</p>
               <MainButton title={city.name} />
             </div>
           ))}
