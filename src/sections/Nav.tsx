@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../utils/LanguageSwitcher";
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleScroll = (id: string) => {
@@ -14,7 +17,8 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
-  const nav: readonly string[] = ["services", "tours", "about"];
+  // Define nav items by keys
+  const navKeys: readonly string[] = ["services", "tours", "about"];
 
   return (
     <nav className="bg-[#C19B77] p-4 text-white absolute z-50 w-full h-24">
@@ -46,35 +50,36 @@ const Navbar = () => {
         </button>
 
         <div className="hidden md:flex">
-          {nav.map((item, index) => (
+          {navKeys.map((key, index) => (
             <a
               key={index}
-              href={`#${item}`}
+              href={`#${key}`}
               onClick={(e) => {
                 e.preventDefault();
-                handleScroll(item);
+                handleScroll(key);
               }}
               className="mx-4 hover:text-[#000000]"
             >
-              <span className="text-lg uppercase">{item}</span>
+              <span className="text-lg uppercase">{t(`nav.${key}`)}</span>
             </a>
           ))}
+          <LanguageSwitcher />
         </div>
       </div>
 
       {isMenuOpen && (
         <div className="md:hidden bg-[#C19B77] mt-4">
-          {nav.map((item, index) => (
+          {navKeys.map((key, index) => (
             <a
               key={index}
-              href={`#${item}`}
+              href={`#${key}`}
               onClick={(e) => {
                 e.preventDefault();
-                handleScroll(item);
+                handleScroll(key);
               }}
               className="block py-2 px-4 hover:text-[#C19B77]"
             >
-              {item}
+              {t(`nav.${key}`)}
             </a>
           ))}
         </div>

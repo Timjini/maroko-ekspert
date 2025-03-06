@@ -14,18 +14,18 @@ const LanguageSwitcher = () => {
         <>
         <button
           onClick={() => changeLanguage("en")}
-          className="px-4 py-2 border rounded"
+          className="mx-4 cursor-pointer uppercase"
         >
-          English 🇬🇧
+          EN 🇬🇧
         </button>
         </>
       ) : (
         <>
         <button
           onClick={() => changeLanguage("pl")}
-          className="px-4 py-2 border rounded"
+          className="mx-4 cursor-pointer uppercase"
         >
-          Polski 🇵🇱
+          PL 🇵🇱
         </button>
         </>
       )}

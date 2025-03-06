@@ -1,11 +1,13 @@
+import { useTranslation } from "react-i18next";
 import MainButton from "../components/MainButton";
-import { cities } from "../utils/data/cities";
 
 const Cities = () => {
+    const { t } = useTranslation();
+    const cities = t("cities", { returnObjects: true }) as { name: string; description: string, image: string }[];
   return (
     <section id="tours" className="flex items-center justify-center min-h-[100vh]">
       <div className="container mx-auto text-center max-w-screen-xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 uppercase">Moroccan Cities</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 uppercase">{t("city.title")}</h2>
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {cities.map((city) => (
             <div key={city.name} className="bg-white p-6 shadow-lg rounded-lg">
