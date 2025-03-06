@@ -89,7 +89,7 @@ const resources = {
         },
         phone: {
           label: "Phone:",
-          values: ["+48 725 648 880", "+212 6245 887 41"]
+          values: ["+48 725 648 880", "+212 669 035 305"]
         },
         contact_button: "Contact Us"
       },
@@ -181,7 +181,7 @@ const resources = {
         },
         phone: {
           label: "Telefon:",
-          values: ["+48 725 648 880", "+212 6245 887 41"]
+          values: ["+48 725 648 880", "+212 669 035 305"]
         },
         contact_button: "Skontaktuj się z nami"
       },
