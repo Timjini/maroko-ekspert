@@ -58,12 +58,12 @@ const resources = {
       cities : [
         {
           name: 'EXCURSIONS AGADIR',
-          description: "Discover Agadir, Morocco's vibrant excursions. From ancient cities to desert adventures, explore unforgettable landscapes. Book now!",
+          description: "Discover Agadir, Morocco's vibrant excursions. From ancient cities to desert adventures, explore unforgettable landscapes.",
           image: 'https://maroko-ekspert.pl/wp-content/uploads/2024/05/Agadir-Taghazoute-scaled.jpg',
         },
         {
           name: 'EXCURSIONS MARRAKECH',
-          description: "Experience Marrakech's magic with our excursions. From historic sites to vibrant markets, explore the heart of Morocco. Book now!",
+          description: "Experience Marrakech's magic with our excursions. From historic sites to vibrant markets, explore the heart of Morocco.",
           image: 'https://maroko-ekspert.pl/wp-content/uploads/2024/05/AdobeStock_176119828-min-scaled.jpeg',
         },
         {
@@ -150,12 +150,12 @@ const resources = {
       cities: [
         {
           name: "Wycieczki z Agadiru",
-          description: "Odkryj Agadir, tętniące życiem wycieczki po Maroku. Od starożytnych miast po pustynne przygody – odkrywaj niezapomniane krajobrazy. Rezerwuj teraz!",
+          description: "Odkryj Agadir, tętniące życiem wycieczki po Maroku. Od starożytnych miast po pustynne przygody – odkrywaj niezapomniane krajobrazy.",
           image: "https://maroko-ekspert.pl/wp-content/uploads/2024/05/Agadir-Taghazoute-scaled.jpg",
         },
         {
           name: "Wycieczki z Marakeszu",
-          description: "Poczuj magię Marrakeszu podczas naszych wycieczek. Od zabytków po tętniące życiem rynki – odkryj serce Maroka. Rezerwuj teraz!",
+          description: "Poczuj magię Marrakeszu podczas naszych wycieczek. Od zabytków po tętniące życiem rynki – odkryj serce Maroka.",
           image: "https://maroko-ekspert.pl/wp-content/uploads/2024/05/AdobeStock_176119828-min-scaled.jpeg",
         },
         {

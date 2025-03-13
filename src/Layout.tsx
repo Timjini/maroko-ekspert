@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Nav, Hero, Solutions, Services, Cities, About, Footer } from './sections';
+import { Hero, Solutions, Services, Cities, About } from './sections';
 import ContactModal from './modals/ContactModal';
 
 const Layout = () => {
@@ -10,14 +10,12 @@ const Layout = () => {
   };
   return (
     <>
-      <Nav />
       {/* <Home /> */}
       <Hero />
       <Solutions />
       <Services />
       <Cities />
       <About  toggleModal={toggleModal}/>
-      <Footer />
       <ContactModal isOpen={isOpen} toggleModal={toggleModal} />
 
     </>

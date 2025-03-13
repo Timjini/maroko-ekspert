@@ -39,6 +39,7 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
 
   const onSubmit = async (data: FormData) => {
     try {
+      console.log("form data", data);
       const response = await axios.post(`${BACKEND_URL}/forms`, data, {
         headers: { "Content-Type": "application/json" },
       });
