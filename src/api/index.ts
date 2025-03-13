@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
 const API_ROOT = import.meta.env.VITE_BACKEND_URL;
 
@@ -20,8 +20,14 @@ interface ExcursionResponse {
   data: Excursion[];
 }
 
-const getAllTours = (payload?: AxiosRequestConfig): Promise<AxiosResponse<ExcursionResponse>> => {
-  return axios.get<ExcursionResponse>(`${API_ROOT}/api/v3/maroko-ekspert`, payload);
+const getAllTours = (params?: { [key: string]: string | undefined }): Promise<AxiosResponse<ExcursionResponse>> => {
+  const filteredParams = Object.fromEntries(
+    Object.entries(params || {}).filter(([_, value]) => value !== undefined)
+  ) as Record<string, string>;
+
+  const queryString = new URLSearchParams(filteredParams).toString();
+
+  return axios.get<ExcursionResponse>(`${API_ROOT}/api/v3/maroko-ekspert?${queryString}`);
 };
 
 const mainApi = {

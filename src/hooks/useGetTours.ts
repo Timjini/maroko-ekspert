@@ -13,6 +13,7 @@ interface Excursion {
   title_en: string;
   title_pl: string;
   content_en: string;
+  imageUrl?: string;
 }
 
 interface ExcursionResponse {
@@ -27,6 +28,7 @@ interface UseGetToursParams {
   duration?: string;
   price?: string;
   _id?: string;
+  [key: string]: string | undefined;
 }
 
 const useGetTours = (params: UseGetToursParams) => {
