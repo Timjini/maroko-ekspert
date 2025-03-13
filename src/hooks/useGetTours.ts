@@ -20,7 +20,16 @@ interface ExcursionResponse {
   data: Excursion[];
 }
 
-const useGetTours = () => {
+interface UseGetToursParams {
+  type?: string;
+  city?: string;
+  include?: string;
+  duration?: string;
+  price?: string;
+  _id?: string;
+}
+
+const useGetTours = (params: UseGetToursParams) => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [tours, setTours] = useState<Excursion[]>([]);
@@ -28,7 +37,7 @@ const useGetTours = () => {
   const fetchTours = async () => {
     try {
       setLoading(true);
-      const response: AxiosResponse<ExcursionResponse> = await mainApi.getAllTours();
+      const response: AxiosResponse<ExcursionResponse> = await mainApi.getAllTours(params);
       setTours(response.data.data); 
     } catch (error) {
       const axiosError = error as AxiosError;
