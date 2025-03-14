@@ -13,6 +13,7 @@ interface Excursion {
   title_en: string;
   title_pl: string;
   content_en: string;
+  image_url?: string;
 }
 
 interface ExcursionResponse {
@@ -22,6 +23,7 @@ interface ExcursionResponse {
 
 const getAllTours = (params?: { [key: string]: string | undefined }): Promise<AxiosResponse<ExcursionResponse>> => {
   const filteredParams = Object.fromEntries(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     Object.entries(params || {}).filter(([_, value]) => value !== undefined)
   ) as Record<string, string>;
 

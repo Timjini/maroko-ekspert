@@ -60,16 +60,19 @@ const resources = {
           name: 'EXCURSIONS AGADIR',
           description: "Discover Agadir, Morocco's vibrant excursions. From ancient cities to desert adventures, explore unforgettable landscapes.",
           image: 'https://maroko-ekspert.pl/wp-content/uploads/2024/05/Agadir-Taghazoute-scaled.jpg',
+          city:"agadir"
         },
         {
           name: 'EXCURSIONS MARRAKECH',
           description: "Experience Marrakech's magic with our excursions. From historic sites to vibrant markets, explore the heart of Morocco.",
           image: 'https://maroko-ekspert.pl/wp-content/uploads/2024/05/AdobeStock_176119828-min-scaled.jpeg',
+          city:"marrakech"
         },
         {
           name: 'NEW ADVENTURES',
           description: 'Experience adventure with our unique packages: horseback and camel rides, a fantasy dinner night, and desert trips. Thrills and unforgettable memories await!',
           image: 'https://maroko-ekspert.pl/wp-content/uploads/2024/05/essaouiar2.jpeg',
+          city:"marrakech"
         },
       ],
       city:{
@@ -152,16 +155,19 @@ const resources = {
           name: "Wycieczki z Agadiru",
           description: "Odkryj Agadir, tętniące życiem wycieczki po Maroku. Od starożytnych miast po pustynne przygody – odkrywaj niezapomniane krajobrazy.",
           image: "https://maroko-ekspert.pl/wp-content/uploads/2024/05/Agadir-Taghazoute-scaled.jpg",
+          city:"agadir"
         },
         {
           name: "Wycieczki z Marakeszu",
           description: "Poczuj magię Marrakeszu podczas naszych wycieczek. Od zabytków po tętniące życiem rynki – odkryj serce Maroka.",
           image: "https://maroko-ekspert.pl/wp-content/uploads/2024/05/AdobeStock_176119828-min-scaled.jpeg",
+          city:"marrakech"
         },
         {
           name: "ATRAKCJE",
           description: "Przeżyj wyjątkowe przygody dzięki naszym unikatowym pakietom: przejażdżki konne i na wielbłądach, fantastyczna kolacja i wycieczki po pustyni. Dreszczyk emocji i niezapomniane wspomnienia czekają!",
           image: "https://maroko-ekspert.pl/wp-content/uploads/2024/05/essaouiar2.jpeg",
+          city:"marrakech"
         },
       ],
       city:{
