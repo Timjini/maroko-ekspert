@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import mainApi from '../api'; 
 import { AxiosError, AxiosResponse } from 'axios';
 
@@ -35,11 +35,13 @@ const useGetTours = (params: UseGetToursParams) => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [tours, setTours] = useState<Excursion[]>([]);
-  
+
+  const stableParams = useMemo(() => params, [JSON.stringify(params)]);
+
   const fetchTours = async () => {
     try {
       setLoading(true);
-      const response: AxiosResponse<ExcursionResponse> = await mainApi.getAllTours(params);
+      const response: AxiosResponse<ExcursionResponse> = await mainApi.getAllTours(stableParams);
       setTours(response.data.data); 
     } catch (error) {
       const axiosError = error as AxiosError;
@@ -52,7 +54,7 @@ const useGetTours = (params: UseGetToursParams) => {
 
   useEffect(() => {
     fetchTours();
-  }, []);
+  }, [stableParams]);
 
   return { tours, loading, error, refetch: fetchTours };
 };

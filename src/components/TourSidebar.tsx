@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import MainButton from './MainButton';
+import { useNavigate } from 'react-router-dom';
 
 interface Filter {
   type?: string;
@@ -10,6 +11,8 @@ interface Filter {
 }
 
 const TourSidebar = ({ onSearch }: { onSearch: (filters: Filter) => void }) => {
+  const navigate = useNavigate();
+
   const [filters, setFilters] = useState<Filter>({
     type: '',
     city: '',
@@ -35,6 +38,11 @@ const TourSidebar = ({ onSearch }: { onSearch: (filters: Filter) => void }) => {
     const resetFilters = { type: '', city: '', include: '', duration: '', price: '' };
     setFilters(resetFilters);
     onSearch(resetFilters);
+  };
+
+  const handleCityClick = (city: string) => {
+    navigate(`/cities/${city.toLowerCase()}`);
+    handleTagClick('city', city);
   };
 
   return (
@@ -73,15 +81,17 @@ const TourSidebar = ({ onSearch }: { onSearch: (filters: Filter) => void }) => {
             <div key={category} className="mb-4">
               <h3 className="font-semibold mb-2">{category}</h3>
               <div className="flex flex-col space-y-2">
-                {options?.map((value) => (
+                  {options?.map((value) => (
                   <button
                     key={value}
                     className={`px-3 py-1 rounded-full text-sm border ${
-                      filters[category.toLowerCase() as keyof Filter] === value
+                      filters[category.toLowerCase() as keyof Filter]?.includes(value)
                         ? 'bg-gray-900 text-white'
                         : 'bg-white text-gray-900'
                     }`}
-                    onClick={() => handleTagClick(category.toLowerCase(), value)}
+                    onClick={() =>
+                      category === 'City' ? handleCityClick(value) : handleTagClick(category.toLowerCase() as keyof Filter, value)
+                    }
                   >
                     {value}
                   </button>

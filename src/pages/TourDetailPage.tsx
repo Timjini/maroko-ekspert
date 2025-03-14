@@ -65,7 +65,7 @@ const TourDetailPage = () => {
           </div>
 
           <button className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition">
-            Book Now
+            Get An Offer
           </button>
 
           <h3 className="text-xl font-semibold mt-10 mb-4">More Excursions</h3>

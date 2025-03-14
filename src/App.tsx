@@ -6,15 +6,19 @@ import TourDetailPage from './pages/TourDetailPage';
 
 function App() {
   return (
-    <Router future={{ v7_startTransition: true }}>
-       <Nav />
-      <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route path="/cities/:slug?" element={<CityPage />} />
-        <Route path="/tours/:slug" element={<TourDetailPage />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <div className="flex flex-col min-h-screen">
+      <Router future={{ v7_startTransition: true }}>
+        <Nav />
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Layout />} />
+            <Route path="/cities/:slug?" element={<CityPage />} />
+            <Route path="/tours/:slug" element={<TourDetailPage />} />
+          </Routes>
+        </div>
+        <Footer />
+      </Router>
+    </div>
   );
 }
 

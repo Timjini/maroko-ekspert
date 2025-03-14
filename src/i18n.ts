@@ -133,7 +133,7 @@ const resources = {
         {
           title: "Rozwiązania E-Guide",
           description: "Pozostań w kontakcie dzięki komunikacji na żywo i śledzeniu postępów aktywności w naszej aplikacji mobilnej.",
-          image: "/home/guided-tours.jpg",
+          image: "/home/eguide-banner.png",
         },
       ],
       services: [
