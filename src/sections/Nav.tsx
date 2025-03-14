@@ -21,7 +21,7 @@ const Navbar = () => {
   const navKeys: readonly string[] = ["services", "tours", "about"];
 
   return (
-    <nav className="bg-[#C19B77] p-4 text-white absolute z-50 w-full h-24">
+    <nav className="bg-[#C19B77] p-4 text-white absolute z-50 w-full h-18">
       <div className="container mx-auto flex justify-between items-center">
         <img
           src="https://maroko-ekspert.pl/wp-content/uploads/2024/04/web-lightmaroko-ekspert.png"

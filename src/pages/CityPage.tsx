@@ -76,11 +76,11 @@ const CityPage = () => {
     if (error) return <div>Error: {error}</div>;
   
     return (
-      <div className="flex pt-24 min-h-screen">
+      <div className="flex flex-col md:flex-row pt-20 min-h-screen">
         <TourSidebar onSearch={handleSearch} />
   
         <div className="flex-1 p-4">
-          <h1 className="text-2xl font-semibold mb-4">Available Tours</h1>
+          <h1 className="text-2xl font-semibold mb-4 text-center">Available Tours</h1>
           {filteredTours.length > 0  ? ( <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredTours.map((tour) => (
               <Card
