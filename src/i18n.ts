@@ -25,17 +25,20 @@ const resources = {
         {
           title: "Polish-speaking Tour Guides",
           description: "Led by El Ouafi, a professional in the field, ensuring a knowledgeable and engaging experience.",
-          image: "/path/to/solution1.jpg",
+          image: "/home/guided-tours.jpg",
+          url:"/cities"
         },
         {
           title: "Unique and Authentic Tours",
           description: "Immerse yourself in real Moroccan culture and cuisine with our carefully curated tours.",
-          image: "/path/to/solution1.jpg",
+          image: "/home/guided-tours.jpg",
+           url:"/cities"
         },
         {
           title: "E-Guide Solutions",
           description: "Stay connected with live communication and activity progress tracking through our mobile app.",
-          image: "/path/to/solution1.jpg",
+          image: "/home/eguide-banner.png",
+           url:"https://e-guidesolutions.com"
         },
       ],
       services: [
@@ -120,17 +123,17 @@ const resources = {
         {
           title: "Polskojęzyczni przewodnicy",
           description: "Prowadzeni przez El Ouafi, profesjonalistę w branży, zapewniają rzetelne i angażujące doświadczenie.",
-          image: "/path/to/solution1.jpg",
+          image: "/home/guided-tours.jpg",
         },
         {
           title: "Unikalne i autentyczne wycieczki",
           description: "Zanurz się w prawdziwej marokańskiej kulturze i kuchni dzięki naszym starannie dobranym wycieczkom.",
-          image: "/path/to/solution1.jpg",
+          image: "/home/guided-tours.jpg",
         },
         {
           title: "Rozwiązania E-Guide",
           description: "Pozostań w kontakcie dzięki komunikacji na żywo i śledzeniu postępów aktywności w naszej aplikacji mobilnej.",
-          image: "/path/to/solution1.jpg",
+          image: "/home/guided-tours.jpg",
         },
       ],
       services: [
