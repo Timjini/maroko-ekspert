@@ -95,7 +95,7 @@ const CityPage = () => {
             ))}
           </div>) : (
             <div className='flex flex-row justify-center mx-auto content-center align-middle'>
-              <h1 className="text-xl font-semibold mb-4">No tours Found</h1>
+              <h1 className="text-xl font-semibold mb-4">No tours Found !</h1>
             </div>
           )}
 
