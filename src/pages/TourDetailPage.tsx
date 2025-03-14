@@ -1,7 +1,7 @@
-import React from 'react';
+// import React from 'react';
 import { useParams } from 'react-router-dom';
 import useGetTours from '../hooks/useGetTours';
-import MainButton from '../components/MainButton';
+// import MainButton from '../components/MainButton';
 
 const TourDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -14,88 +14,66 @@ const TourDetailPage = () => {
   const tour = tours[0];
 
   return (
-    <div className="container mx-auto pt-36 px-4 min-h-screen">
-      <div className="flex flex-col md:flex-row gap-8">
-        <div className="w-full md:w-1/2">
+    <div className="container mx-auto py-36 px-6 min-h-screen">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
           <img
             src={tour.imageUrl || 'default-image-url.jpg'}
             alt={tour.title_en}
-            className="w-full h-96 object-cover rounded-md"
+            className="w-full h-96 object-cover rounded-lg"
           />
-           <div className="my-8">
-            <p className="text-gray-600 leading-pretty">
-              {tour.content_en}
-            </p>
-          </div>
+          <p className="text-gray-700 leading-relaxed mt-6">{tour.content_en}</p>
         </div>
 
-        <div className="w-full md:w-1/2">
-          <h2 className="text-3xl font-bold">{tour.title_en}</h2>
-          <p className="text-sm text-gray-500 mt-2">{tour.city}</p>
+        <div>
+          <h1 className="text-4xl font-bold text-gray-900">{tour.title_en}</h1>
+          <p className="text-md text-gray-500 mt-2">{tour.city}</p>
 
-          <div className="flex gap-8 my-6">
+          <div className="flex justify-between items-center my-8">
             <div>
-              <h3 className="font-semibold">Excursion</h3>
+              <h3 className="text-lg font-semibold">Excursion</h3>
               <p className="text-gray-600">{tour.duration} hours</p>
             </div>
             <div>
-              <h3 className="font-semibold">Meals</h3>
-              <p className="text-gray-600">
-                Included
-              </p>
+              <h3 className="text-lg font-semibold">Meals</h3>
+              <p className="text-gray-600">Included</p>
             </div>
             <div>
-              <h3 className="font-semibold">Beverages</h3>
-              <p className="text-gray-600">
-                Not Included
-              </p>
+              <h3 className="text-lg font-semibold">Beverages</h3>
+              <p className="text-gray-600">Not Included</p>
             </div>
           </div>
 
-          <div className="border-t border-b py-6">
-            <h3 className="text-xl font-bold mb-4">Details</h3>
-            <table className="w-full">
+          <div className="bg-gray-100 p-6 rounded-lg shadow-sm mb-6">
+            <h3 className="text-xl font-semibold mb-4">Details</h3>
+            <table className="w-full text-gray-700">
               <tbody>
-                <tr className="border-b">
-                  <td className="py-3 font-semibold">LOCATION</td>
-                  <td className="py-3">{tour.city}</td>
-                </tr>
-                <tr className="border-b">
-                  <td className="py-3 font-semibold">TIMING</td>
-                  <td className="py-3">{tour.timing}</td>
-                </tr>
-                <tr className="border-b">
-                  <td className="py-3 font-semibold">PRICE</td>
-                  <td className="py-3">€{tour.price.toFixed(2)}</td>
+                <tr>
+                  <td className="py-2 font-medium">Location</td>
+                  <td>{tour.city}</td>
                 </tr>
                 <tr>
-                  <td className="py-3 font-semibold">Book Now</td>
-                  <td className="py-3">
-                    <MainButton title="Book Now" />
-                  </td>
+                  <td className="py-2 font-medium">Timing</td>
+                  <td>{tour.timing}</td>
+                </tr>
+                <tr>
+                  <td className="py-2 font-medium">Price</td>
+                  <td>€{tour.price.toFixed(2)}</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          {/* More Excursions */}
-          <div className="mb-8">
-            <h3 className="text-xl font-bold mb-4">More Excursions</h3>
-            <ul className="list-disc pl-5 space-y-2">
-              {/* {tour.relatedTours?.map((excursion: any, index: number) => (
-                <li key={index} className="text-gray-600">
-                  {excursion.title}
-                  {excursion.subItems && (
-                    <ul className="list-circle pl-5 mt-2">
-                      {excursion.subItems.map((item: string, i: number) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              ))} */}
-            </ul>
-          </div>
+          <button className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition">
+            Book Now
+          </button>
+
+          <h3 className="text-xl font-semibold mt-10 mb-4">More Excursions</h3>
+          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+            {/* {tour.relatedTours?.map((excursion, index) => (
+              <li key={index}>{excursion.title}</li>
+            ))} */}
+          </ul>
         </div>
       </div>
     </div>
