@@ -41,7 +41,7 @@ const TourSidebar = ({ onSearch }: { onSearch: (filters: Filter) => void }) => {
             <button
               key={value}
               className={`px-3 py-1 rounded-full text-sm border ${
-                filters.type === value ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'
+                filters.type === value ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
               }`}
               onClick={() => handleTagClick('type', value)}
             >
@@ -55,11 +55,11 @@ const TourSidebar = ({ onSearch }: { onSearch: (filters: Filter) => void }) => {
       <div className="mb-4">
         <h3 className="font-semibold">City</h3>
         <div className="space-x-2">
-          {['Marrakech', 'Casablanca', 'Fes'].map((value) => (
+          {['Marrakech', 'Agadir', 'Essaouira'].map((value) => (
             <button
               key={value}
               className={`px-3 py-1 rounded-full text-sm border ${
-                filters.city === value ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'
+                filters.city === value ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
               }`}
               onClick={() => handleTagClick('city', value)}
             >
@@ -77,7 +77,7 @@ const TourSidebar = ({ onSearch }: { onSearch: (filters: Filter) => void }) => {
             <button
               key={value}
               className={`px-3 py-1 rounded-full text-sm border ${
-                filters.include === value ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'
+                filters.include === value ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
               }`}
               onClick={() => handleTagClick('include', value)}
             >
@@ -95,7 +95,7 @@ const TourSidebar = ({ onSearch }: { onSearch: (filters: Filter) => void }) => {
             <button
               key={value}
               className={`px-3 py-1 rounded-full text-sm border ${
-                filters.duration === value ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'
+                filters.duration === value ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
               }`}
               onClick={() => handleTagClick('duration', value)}
             >
@@ -113,7 +113,7 @@ const TourSidebar = ({ onSearch }: { onSearch: (filters: Filter) => void }) => {
             <button
               key={value}
               className={`px-3 py-1 rounded-full text-sm border ${
-                filters.price === value ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'
+                filters.price === value ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
               }`}
               onClick={() => handleTagClick('price', value)}
             >
