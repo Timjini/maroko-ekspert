@@ -1,12 +1,8 @@
 import React from "react";
+import { MainButtonProps } from '../types/common';
 
-interface MainButtonProps {
-  title: string;
-  action: () => void;
-}
-
-const ActionButton: React.FC<MainButtonProps> = ({ title , action }) => {
-  return <button className="mainBtn" onClick={action}>{title}</button>;
+const ActionButton: React.FC<MainButtonProps> = ({ title , onClick }) => {
+  return <button className="mainBtn" onClick={onClick}>{title}</button>;
 };
 
 export default ActionButton;

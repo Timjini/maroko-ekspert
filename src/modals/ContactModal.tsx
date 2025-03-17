@@ -2,30 +2,19 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import axios from "axios";
 import MainButton from "../components/MainButton";
 import PhoneInput from "../components/PhoneInput";
+import { FormModalProps } from "../types/common";
+import { formSchema } from "../utils";
+import mainApi from "../api";
 // import LoadingButton from "../components/LoadingButton";
+// eslint-disable-next-line react-refresh/only-export-components
 export const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
-
-
-const formSchema = z.object({
-  title: z.string().default("Maroko Ekspert Form"),
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email address"),
-  phone: z.string().min(10, "Phone number is required"),
-  message: z.string().min(5, "Message must be at least 5 characters"),
-  status: z.string().default("new"),
-});
 
 type FormData = z.infer<typeof formSchema>;
 
-interface FormModalProps {
-  isOpen: boolean;
-  toggleModal: () => void;
-}
-
 const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
+  console.log("opened", isOpen);
   const {
     register,
     handleSubmit,
@@ -36,13 +25,10 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
     resolver: zodResolver(formSchema),
   });
 
-
   const onSubmit = async (data: FormData) => {
     try {
-      console.log("form data", data);
-      const response = await axios.post(`${BACKEND_URL}/forms`, data, {
-        headers: { "Content-Type": "application/json" },
-      });
+      console.log("Form data:", data);
+      const response = await mainApi.sendFormData(data);
 
       if (response?.data?.status !== "success") {
         throw new Error("Failed to send the form. Please try again later.");
@@ -68,7 +54,7 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
           <div className="relative bg-white rounded-2xl shadow-lg w-11/12 max-w-lg p-8 z-10">
             <button
               onClick={toggleModal}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 hover:cursor-pointer"
             >
               ✖
             </button>
@@ -79,7 +65,10 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
 
             <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
               <div>
-                <label htmlFor="name" className="block text-left text-gray-500 text-sm">
+                <label
+                  htmlFor="name"
+                  className="block text-left text-gray-500 text-sm"
+                >
                   Name
                 </label>
                 <input
@@ -89,11 +78,16 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
                   placeholder="Your Name"
                   className="mt-1 w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500"
                 />
-                {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
+                {errors.name && (
+                  <p className="text-red-500 text-sm">{errors.name.message}</p>
+                )}
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-left text-gray-500 text-sm">
+                <label
+                  htmlFor="email"
+                  className="block text-left text-gray-500 text-sm"
+                >
                   Email
                 </label>
                 <input
@@ -103,14 +97,21 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
                   placeholder="Your Email"
                   className="mt-1 w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500"
                 />
-                {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+                {errors.email && (
+                  <p className="text-red-500 text-sm">{errors.email.message}</p>
+                )}
               </div>
 
               <PhoneInput onChange={(value) => setValue("phone", value)} />
-              {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
+              {errors.phone && (
+                <p className="text-red-500 text-sm">{errors.phone.message}</p>
+              )}
 
               <div>
-                <label htmlFor="message" className="block text-left text-gray-500 text-sm">
+                <label
+                  htmlFor="message"
+                  className="block text-left text-gray-500 text-sm"
+                >
                   Message
                 </label>
                 <textarea
@@ -120,15 +121,18 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
                   rows={4}
                   className="mt-1 w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500"
                 ></textarea>
-                {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
+                {errors.message && (
+                  <p className="text-red-500 text-sm">
+                    {errors.message.message}
+                  </p>
+                )}
               </div>
 
               <div className="flex justify-center">
-                {isSubmitting ? (
-                  <MainButton title="Sending..."/>
-                ) : (
-                  <MainButton title="Send"/>
-                )}
+                <MainButton
+                  title={isSubmitting ? "Sending..." : "Send"}
+                  onClick={handleSubmit(onSubmit)}
+                />
               </div>
             </form>
           </div>

@@ -1,21 +1,13 @@
 import { useState } from 'react';
 import MainButton from './MainButton';
-import { useNavigate } from 'react-router-dom';
-
-interface Filter {
-  type?: string;
-  city?: string;
-  include?: string;
-  duration?: string;
-  price?: string;
-}
+// import { useNavigate } from 'react-router-dom';
+import { Filter } from '../types/tour';
 
 const TourSidebar = ({ onSearch }: { onSearch: (filters: Filter) => void }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [filters, setFilters] = useState<Filter>({
     type: '',
-    city: '',
     include: '',
     duration: '',
     price: '',
@@ -35,19 +27,18 @@ const TourSidebar = ({ onSearch }: { onSearch: (filters: Filter) => void }) => {
   };
 
   const handleReset = () => {
-    const resetFilters = { type: '', city: '', include: '', duration: '', price: '' };
+    const resetFilters = { type: '', include: '', duration: '', price: '' };
     setFilters(resetFilters);
     onSearch(resetFilters);
   };
 
-  const handleCityClick = (city: string) => {
-    navigate(`/cities/${city.toLowerCase()}`);
-    handleTagClick('city', city);
-  };
+  // const handleCityClick = (city: string) => {
+  //   navigate(`/cities/${city.toLowerCase()}`);
+  //   handleTagClick('city', city);
+  // };
 
   return (
     <>
-      {/* Filter Button for Mobile */}
       <button
         onClick={toggleFilter}
         className="md:hidden px-4 py-2 bg-gray-900 text-white rounded-md h-12 mx-auto"
@@ -55,7 +46,6 @@ const TourSidebar = ({ onSearch }: { onSearch: (filters: Filter) => void }) => {
         Filter
       </button>
 
-      {/* Filter Sidebar (Hidden by default on mobile) */}
       <div
         className={`fixed inset-0 bg-white p-6 z-50 transform ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
@@ -68,10 +58,10 @@ const TourSidebar = ({ onSearch }: { onSearch: (filters: Filter) => void }) => {
           </button>
         </div>
 
-        {['Type', 'City', 'Include', 'Duration', 'Price'].map((category) => {
+        {['Type', 'Include', 'Duration', 'Price'].map((category) => {
           const options = {
             Type: ['excursion', 'tour', 'adventure'],
-            City: ['Marrakech', 'Agadir', 'Essaouira'],
+            // City: ['Marrakech', 'Agadir', 'Essaouira'],
             Include: ['Breakfast', 'Lunch', 'Dinner'],
             Duration: ['Half Day', 'Full Day', 'Multiple Days'],
             Price: ['Under $50', '$50-$100', 'Over $100'],
@@ -89,9 +79,10 @@ const TourSidebar = ({ onSearch }: { onSearch: (filters: Filter) => void }) => {
                         ? 'bg-gray-900 text-white'
                         : 'bg-white text-gray-900'
                     }`}
-                    onClick={() =>
-                      category === 'City' ? handleCityClick(value) : handleTagClick(category.toLowerCase() as keyof Filter, value)
-                    }
+                    // onClick={() =>
+                    //   category === 'City' ? handleCityClick(value) : handleTagClick(category.toLowerCase() as keyof Filter, value)
+                    // }
+                    onClick={()=> handleTagClick(category.toLowerCase() as keyof Filter, value)}
                   >
                     {value}
                   </button>

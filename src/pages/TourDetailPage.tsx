@@ -14,7 +14,7 @@ const TourDetailPage = () => {
   const tour = tours[0];
 
   return (
-    <div className="container mx-auto py-36 px-6 min-h-screen">
+    <div className=" mx-auto py-36 px-4 md:px-32 min-h-screen">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
           <img
@@ -22,7 +22,7 @@ const TourDetailPage = () => {
             alt={tour.title_en}
             className="w-full h-96 object-cover rounded-lg"
           />
-          <p className="text-gray-700 leading-relaxed mt-6">{tour.content_en}</p>
+          <div dangerouslySetInnerHTML={{ __html: tour.content_en }} />
         </div>
 
         <div>

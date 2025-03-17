@@ -1,27 +1,12 @@
-import axios, { AxiosResponse } from 'axios';
+import axios, { AxiosResponse } from "axios";
+import { ExcursionResponse } from "../types/tour";
+import { FormResponse, FormData } from "../types/common";
 
 const API_ROOT = import.meta.env.VITE_BACKEND_URL;
 
-interface Excursion {
-  _id: string;
-  type: string;
-  city: string;
-  include: string;
-  duration: string;
-  price: number;
-  timing: string;
-  title_en: string;
-  title_pl: string;
-  content_en: string;
-  image_url?: string;
-}
-
-interface ExcursionResponse {
-  message: string;
-  data: Excursion[];
-}
-
-const getAllTours = (params?: { [key: string]: string | undefined }): Promise<AxiosResponse<ExcursionResponse>> => {
+const getAllTours = (params?: {
+  [key: string]: string | undefined;
+}): Promise<AxiosResponse<ExcursionResponse>> => {
   const filteredParams = Object.fromEntries(
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     Object.entries(params || {}).filter(([_, value]) => value !== undefined)
@@ -29,11 +14,22 @@ const getAllTours = (params?: { [key: string]: string | undefined }): Promise<Ax
 
   const queryString = new URLSearchParams(filteredParams).toString();
 
-  return axios.get<ExcursionResponse>(`${API_ROOT}/api/v3/maroko-ekspert?${queryString}`);
+  return axios.get<ExcursionResponse>(
+    `${API_ROOT}/api/v3/maroko-ekspert?${queryString}`
+  );
+};
+
+const sendFormData = async (
+  data: FormData
+): Promise<AxiosResponse<FormResponse>> => {
+  return axios.post<FormResponse>(`${API_ROOT}/forms`, data, {
+    headers: { "Content-Type": "application/json" },
+  });
 };
 
 const mainApi = {
   getAllTours,
+  sendFormData,
 };
 
 export default mainApi;

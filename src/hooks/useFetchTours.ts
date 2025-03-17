@@ -1,25 +1,7 @@
 import  { useState, useEffect } from 'react';
 import useGetTours  from '../hooks/useGetTours';
+import { Tour, Filter } from '../types/tour';
 
-interface Tour {
-  _id: string;
-  type: string;
-  city: string;
-  include: string;
-  duration: string;
-  price: number;
-  title_en: string;
-  content_en: string;
-  image_url?: string;
-}
-
-interface Filter {
-  type?: string;
-  city?: string;
-  include?: string;
-  duration?: string;
-  price?: string;
-}
 
 const useFetchTours = (city:string | undefined) => {
     const { tours, loading, error } = useGetTours({ city: city });

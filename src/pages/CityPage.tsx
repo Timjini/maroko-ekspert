@@ -6,7 +6,7 @@ import useFetchTours from '../hooks/useFetchTours';
 
 const CityPage = () => {
     const { slug } = useParams<{ slug: string }>();
-    const { filteredTours, loading, error, handleSearch } = useFetchTours(slug);
+    const { filteredTours, loading, error,handleSearch  } = useFetchTours(slug);
 
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;

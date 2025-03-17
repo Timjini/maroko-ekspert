@@ -2,15 +2,7 @@
 import React from 'react';
 import MainButton from './MainButton';
 import { useNavigate } from 'react-router-dom';
-
-interface CardProps {
-  title: string;
-  city: string;
-  content: string;
-  price: number;
-  imageUrl: string;
-  _id: string;
-}
+import { CardProps } from '../types/tour';
 
 const Card: React.FC<CardProps> = ({ title, city, content, price, imageUrl, _id }) => {
     const navigate = useNavigate();

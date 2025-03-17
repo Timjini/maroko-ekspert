@@ -54,7 +54,7 @@ const About: React.FC<AboutProps> = ({ toggleModal }) => {
 
           <ActionButton
             title={t("about.contact_button")}
-            action={toggleModal}
+            onClick={toggleModal}
           />
         </div>
       </div>
