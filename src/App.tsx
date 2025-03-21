@@ -7,7 +7,8 @@ import TourDetailPage from './pages/TourDetailPage';
 const App = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <Router future={{ v7_relativeSplatPath: true }}>
+      <Router future={{  v7_startTransition: true,
+                         v7_relativeSplatPath: true,}}>
         <Nav />
         <div className="flex-grow">
           <Routes>

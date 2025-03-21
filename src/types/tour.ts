@@ -41,7 +41,7 @@ export interface Excursion {
     title_pl: string;
     content_en: string;
     imageUrls: string[];
-    description_en?: string;
+    description_en: string;
   }
   
 export interface ExcursionResponse {
