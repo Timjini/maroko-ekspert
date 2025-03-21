@@ -41,13 +41,13 @@ const TourSidebar = ({ onSearch }: { onSearch: (filters: Filter) => void }) => {
     <>
       <button
         onClick={toggleFilter}
-        className="md:hidden px-4 py-2 bg-gray-900 text-white rounded-md h-12 mx-auto"
+        className="md:hidden mt-4 px-4 py-2 bg-gray-900 text-white rounded-md h-12 mx-auto"
       >
         Filter
       </button>
 
       <div
-        className={`fixed inset-0 bg-white p-6 z-50 transform ${
+        className={`fixed inset-0 bg-white p-6 z-30 transform ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } transition-transform md:static md:translate-x-0 md:w-64 md:block bg-gray-100 shadow-md`}
       >

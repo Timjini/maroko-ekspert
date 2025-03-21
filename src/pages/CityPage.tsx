@@ -9,12 +9,11 @@ const CityPage = () => {
     const { slug } = useParams<{ slug: string }>();
     const { filteredTours, loading, error,handleSearch  } = useFetchTours(slug);
 
-    console.log("tour-------->",filteredTours)
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
   
     return (
-      <div className="flex flex-col md:flex-row pt-20 min-h-screen">
+      <div className="toursContainer flex flex-col md:flex-row pt-20 min-h-screen">
         <TourSidebar onSearch={handleSearch} />
   
         <div className="flex-1 p-4">
