@@ -8,7 +8,6 @@ const Cities = () => {
   const navigate = useNavigate();
 
   const navigateToCity = (cityName: string) => {
-    console.log("city name", cityName);
     navigate(`/cities/${cityName}`);
   };
 

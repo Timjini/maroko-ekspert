@@ -8,8 +8,8 @@ export interface Tour {
   title_en: string;
   content_en: string;
   image_url?: string;
-  description_en?: string;
-  imageUrls?: string[];
+  description_en: string;
+  imageUrls: string[];
 }
 export interface Filter {
   type?: string;
@@ -25,6 +25,7 @@ export interface CardProps {
   content: string;
   price: number;
   imageUrl: string;
+  description_en?: string;
   _id: string;
 }
 
@@ -39,7 +40,8 @@ export interface Excursion {
     title_en: string;
     title_pl: string;
     content_en: string;
-    imageUrl?: string;
+    imageUrls: string[];
+    description_en?: string;
   }
   
 export interface ExcursionResponse {

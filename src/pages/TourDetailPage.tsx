@@ -1,6 +1,7 @@
 // import React from 'react';
 import { useParams } from 'react-router-dom';
 import useGetTours from '../hooks/useGetTours';
+import { formatMediaImage } from '../utils';
 // import MainButton from '../components/MainButton';
 
 const TourDetailPage = () => {
@@ -12,13 +13,14 @@ const TourDetailPage = () => {
   if (tours.length === 0) return <div>No tour found.</div>;
 
   const tour = tours[0];
+  console.log("tour image", tour?.imageUrls[0]);
 
   return (
     <div className=" mx-auto py-36 px-4 md:px-32 min-h-screen">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
           <img
-            src={tour.imageUrl || 'default-image-url.jpg'}
+            src={formatMediaImage(tour?.imageUrls[0]) || 'default-image-url.jpg'}
             alt={tour.title_en}
             className="w-full h-96 object-cover rounded-lg"
           />

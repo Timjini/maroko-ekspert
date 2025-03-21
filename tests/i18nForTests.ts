@@ -25,7 +25,7 @@ const resources = {
         {
           title: "Polish-speaking Tour Guides",
           description: "Led by El Ouafi, a professional in the field, ensuring a knowledgeable and engaging experience.",
-          image: "/home/guidedtour.jpg",
+          image: "/home/guided-tours.jpg",
           url:"/cities"
         },
         {
@@ -73,7 +73,7 @@ const resources = {
         },
         {
           name: 'NEW ADVENTURES',
-          description: 'Experience adventure with our unique packages: horseback and camel rides, a fantasy dinner night, and desert trips.',
+          description: 'Experience adventure with our unique packages: horseback and camel rides, a fantasy dinner night, and desert trips. Thrills and unforgettable memories await!',
           image: 'https://maroko-ekspert.pl/wp-content/uploads/2024/05/essaouiar2.jpeg',
           city:"marrakech"
         },
@@ -123,7 +123,7 @@ const resources = {
         {
           title: "Polskojęzyczni przewodnicy",
           description: "Prowadzeni przez El Ouafi, profesjonalistę w branży, zapewniają rzetelne i angażujące doświadczenie.",
-          image: "/home/guidedtour.jpg",
+          image: "/home/guided-tours.jpg",
         },
         {
           title: "Unikalne i autentyczne wycieczki",
@@ -168,7 +168,7 @@ const resources = {
         },
         {
           name: "ATRAKCJE",
-          description: "Przeżyj wyjątkowe przygody dzięki naszym unikatowym pakietom: przejażdżki konne i na wielbłądach, fantastyczna kolacja i wycieczki po pustyni.",
+          description: "Przeżyj wyjątkowe przygody dzięki naszym unikatowym pakietom: przejażdżki konne i na wielbłądach, fantastyczna kolacja i wycieczki po pustyni. Dreszczyk emocji i niezapomniane wspomnienia czekają!",
           image: "https://maroko-ekspert.pl/wp-content/uploads/2024/05/essaouiar2.jpeg",
           city:"marrakech"
         },

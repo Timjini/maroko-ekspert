@@ -2,12 +2,14 @@ import TourSidebar from '../components/TourSidebar';
 import Card from '../components/Card';
 import { useParams } from 'react-router-dom';
 import useFetchTours from '../hooks/useFetchTours';
+import { formatMediaImage } from '../utils';
 
 
 const CityPage = () => {
     const { slug } = useParams<{ slug: string }>();
     const { filteredTours, loading, error,handleSearch  } = useFetchTours(slug);
 
+    console.log("tour-------->",filteredTours)
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error}</div>;
   
@@ -23,9 +25,9 @@ const CityPage = () => {
               key={tour._id}
               title={tour.title_en}
               city={tour.city}
-              content={tour.content_en.slice(0, 150)+ '...'}
+              content={tour.description_en.slice(0, 150)+ '...'}
               price={tour.price}
-              imageUrl={tour.image_url || ""}
+              imageUrl={formatMediaImage(tour?.imageUrls[0]) || ""}
               _id= {tour._id}
             />
             ))}

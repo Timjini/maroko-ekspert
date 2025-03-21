@@ -4,10 +4,10 @@ import CityPage from './pages/CityPage';
 import { Footer, Nav } from './sections';
 import TourDetailPage from './pages/TourDetailPage';
 
-function App() {
+const App = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <Router future={{ v7_startTransition: true }}>
+      <Router future={{ v7_relativeSplatPath: true }}>
         <Nav />
         <div className="flex-grow">
           <Routes>
@@ -20,6 +20,6 @@ function App() {
       </Router>
     </div>
   );
-}
+};
 
 export default App;

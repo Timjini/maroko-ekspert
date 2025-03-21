@@ -14,7 +14,6 @@ export const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 type FormData = z.infer<typeof formSchema>;
 
 const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
-  console.log("opened", isOpen);
   const {
     register,
     handleSubmit,
@@ -27,7 +26,6 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
 
   const onSubmit = async (data: FormData) => {
     try {
-      console.log("Form data:", data);
       const response = await mainApi.sendFormData(data);
 
       if (response?.data?.status !== "success") {

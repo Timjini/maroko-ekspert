@@ -47,9 +47,6 @@ const useFetchTours = (city:string | undefined) => {
       setFilteredTours(tours);
     }, [tours]);
 
-
-    console.log("fetched tours.",filteredTours.length)
-
     return { filteredTours, loading, error, handleSearch };
 
    

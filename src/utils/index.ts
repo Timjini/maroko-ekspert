@@ -32,3 +32,8 @@ export const formSchema = z.object({
   message: z.string().min(5, "Message must be at least 5 characters"),
   status: z.string().default("new"),
 });
+
+export const formatMediaImage = (value: string) => {
+  const API_BUCKET = import.meta.env.VITE_PUBLIC_BUCKET_URL;
+  return value ? API_BUCKET + value : '';
+}

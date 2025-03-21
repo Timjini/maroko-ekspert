@@ -5,7 +5,6 @@ import ContactModal from './modals/ContactModal';
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleModal = () => {
-    console.log("clicked")
     setIsOpen(prevState => !prevState);
   };
   return (

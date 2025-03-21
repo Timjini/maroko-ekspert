@@ -21,7 +21,7 @@ const Solutions: React.FC = () => {
       <div className="container mx-auto px-4 max-w-screen-xl">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 uppercase">{t("solution.title")}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {solutions.map((solution, index) => (
+          {solutions?.map((solution, index) => (
             <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center" key={index}>
               <img
                 src={API_BUCKET + solution.image}
