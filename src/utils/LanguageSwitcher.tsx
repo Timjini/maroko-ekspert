@@ -8,7 +8,7 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 hover:text-[#c0c0c0]">
       {i18n?.language == "pl" ? (
         <>
         <button

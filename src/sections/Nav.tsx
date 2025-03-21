@@ -21,7 +21,7 @@ const Navbar = () => {
   const navKeys: readonly string[] = ["services", "tours", "about"];
 
   return (
-    <nav className="bg-[#C19B77] p-4 text-white absolute z-50 w-full h-18">
+    <nav className="bg-gray-900 p-6 text-white absolute z-40 w-full h-24 shadow-lg">
       <div className="px-4 mx-auto flex justify-between items-center">
         <a href="/">
           <img
@@ -51,7 +51,7 @@ const Navbar = () => {
           </svg>
         </button>
 
-        <div className="hidden md:flex">
+        <div className="hidden md:flex pr-12">
           {navKeys.map((key, index) => (
             <a
               key={index}
@@ -60,9 +60,9 @@ const Navbar = () => {
                 e.preventDefault();
                 handleScroll(key);
               }}
-              className="mx-4 hover:text-[#000000]"
+              className="mx-4 hover:text-[#c0c0c0]"
             >
-              <span className="text-lg uppercase">{t(`nav.${key}`)}</span>
+              <span className="text-lg">{t(`nav.${key}`)}</span>
             </a>
           ))}
           <LanguageSwitcher />
@@ -70,7 +70,7 @@ const Navbar = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden bg-[#C19B77] mt-4">
+        <div className="md:hidden bg-gray-900 my-4 py-8 w-96 flex flex-col gap-2">
           {navKeys.map((key, index) => (
             <a
               key={index}
@@ -79,7 +79,7 @@ const Navbar = () => {
                 e.preventDefault();
                 handleScroll(key);
               }}
-              className="block py-2 px-4 hover:text-[#C19B77]"
+              className=" py-2 px-4 hover:text-[#C19B77]"
             >
               {t(`nav.${key}`)}
             </a>
