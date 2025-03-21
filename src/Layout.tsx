@@ -10,7 +10,7 @@ const Layout = () => {
   return (
     <>
       {/* <Home /> */}
-      <Hero />
+      <Hero  toggleModal={toggleModal}/>
       <Solutions />
       <Services />
       <Cities />

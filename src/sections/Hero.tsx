@@ -1,7 +1,11 @@
 import { useTranslation } from "react-i18next";
-import MainButton from "../components/MainButton";
+import ActionButton from "../components/ActionButton";
 
-const Hero = () => {
+interface HeroProps {
+  toggleModal: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ toggleModal }) => {
   const { t } = useTranslation();
   return (
     <div
@@ -16,7 +20,9 @@ const Hero = () => {
       <p className="text-lg md:text-2xl mb-8 max-w-2xl mx-auto">
         {t("hero.description")}
       </p>
-      <MainButton title={t("hero.button")} />
+      <ActionButton title={t("hero.button")}              
+                  onClick={toggleModal}
+      />
     </div>
   </div>
   );
