@@ -2,18 +2,21 @@
 import { useParams } from 'react-router-dom';
 import useGetTours from '../hooks/useGetTours';
 import { formatMediaImage } from '../utils';
+import SimilarExcursionCard from '../components/SimilarExcursionCard';
 // import MainButton from '../components/MainButton';
 
 const TourDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { tours, loading, error } = useGetTours({ _id: slug });
+  const { tours, similarExcursions, loading, error } = useGetTours({ _id: slug });
+
+
+  console.log("similarExcursions", similarExcursions);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
   if (tours.length === 0) return <div>No tour found.</div>;
 
   const tour = tours[0];
-  console.log("tour image", tour?.imageUrls[0]);
 
   return (
     <div className=" mx-auto py-36 px-4 md:px-32 min-h-screen">
@@ -71,11 +74,18 @@ const TourDetailPage = () => {
           </button>
 
           <h3 className="text-xl font-semibold mt-10 mb-4">More Excursions</h3>
-          <ul className="list-disc pl-5 text-gray-600 space-y-2">
-            {/* {tour.relatedTours?.map((excursion, index) => (
-              <li key={index}>{excursion.title}</li>
-            ))} */}
-          </ul>
+          <div className="flex flex-col gap-4">
+            {similarExcursions.map((excursion) => (
+              <SimilarExcursionCard
+                key={excursion._id}
+                _id={excursion._id}
+                title={excursion.title_en}
+                duration={excursion.duration}
+                price={excursion.price}
+                imageUrls={excursion.imageUrls}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -43,10 +43,20 @@ export interface Excursion {
     imageUrls: string[];
     description_en: string;
   }
+
+export interface SimilarExcursions{
+  _id: string;
+  imageUrls: string[];
+  duration: string;
+  price: number;
+  title_en: string;
+  title_pl: string;
+}
   
 export interface ExcursionResponse {
     message: string;
     data: Excursion[];
+    excursionsWithSimilar: SimilarExcursions[];
   }
   
 export interface UseGetToursParams {

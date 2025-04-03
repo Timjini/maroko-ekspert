@@ -47,7 +47,7 @@ const TourSidebar = ({ onSearch }: { onSearch: (filters: Filter) => void }) => {
       </button>
 
       <div
-        className={`fixed inset-0 bg-white p-6 z-30 transform ${
+        className={`fixed inset-0 bg-white p-6 z-50 transform ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } transition-transform md:static md:translate-x-0 md:w-64 md:block bg-gray-100 shadow-md`}
       >
