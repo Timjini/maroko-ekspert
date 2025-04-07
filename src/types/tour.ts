@@ -44,6 +44,7 @@ export interface Excursion {
     content_en: string;
     title_pl:string;
     content_pl:string;
+    description_pl:string;
     imageUrls: string[];
     description_en: string;
   }
