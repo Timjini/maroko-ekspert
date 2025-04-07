@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { PhoneInputProps } from '../types/common';
 import {countryCodes , formatPhoneNumber} from '../utils';
+import { useTranslation } from "react-i18next";
 
 const PhoneInput: React.FC<PhoneInputProps> = ({ onChange }) => {
+  const {t} = useTranslation();
   const [selectedCode, setSelectedCode] = useState("+48");
   const [phoneNumber, setPhoneNumber] = useState("");
 
@@ -19,8 +21,8 @@ const PhoneInput: React.FC<PhoneInputProps> = ({ onChange }) => {
 
   return (
     <div>
-      <label className="block text-left text-gray-500 text-sm">
-        Phone number
+      <label className="block text-left text-gray-500 text-sm capitalize">
+      {t('contact.phone_number')}
       </label>
       <div className="relative mt-2 text-gray-500">
         <div className="absolute w-24 inset-y-0 left-0 flex items-center border-r pr-3">

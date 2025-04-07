@@ -22,6 +22,14 @@ const getAllTours = (params?: {
 const sendFormData = async (
   data: FormData
 ): Promise<AxiosResponse<FormResponse>> => {
+  return axios.post<FormResponse>(`${API_ROOT}/api/v3/maroko-ekspert/booking-request`, data, {
+    headers: { "Content-Type": "application/json" },
+  });
+};
+
+const sendRequestData = async (
+  data: FormData
+): Promise<AxiosResponse<FormResponse>> => {
   return axios.post<FormResponse>(`${API_ROOT}/forms`, data, {
     headers: { "Content-Type": "application/json" },
   });
@@ -30,6 +38,7 @@ const sendFormData = async (
 const mainApi = {
   getAllTours,
   sendFormData,
+  sendRequestData
 };
 
 export default mainApi;

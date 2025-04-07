@@ -7,6 +7,7 @@ import PhoneInput from "../components/PhoneInput";
 import { FormModalProps } from "../types/common";
 import { formSchema } from "../utils";
 import mainApi from "../api";
+import { useTranslation } from "react-i18next";
 // import LoadingButton from "../components/LoadingButton";
 // eslint-disable-next-line react-refresh/only-export-components
 export const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
@@ -14,6 +15,7 @@ export const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 type FormData = z.infer<typeof formSchema>;
 
 const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -57,23 +59,23 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
               ✖
             </button>
 
-            <h2 className="text-2xl font-semibold mb-6 text-center">
-              Contact Us
+            <h2 className="text-2xl font-semibold mb-6 text-center capitalize">
+              {t('contact.contact_us')}
             </h2>
 
             <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-left text-gray-500 text-sm"
+                  className="block text-left text-gray-500 text-sm capitalize"
                 >
-                  Name
+                  {t('contact.name')}
                 </label>
                 <input
                   type="text"
                   id="name"
                   {...register("name")}
-                  placeholder="Your Name"
+                  placeholder={t('contact.your_name')}
                   className="mt-1 w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500"
                 />
                 {errors.name && (
@@ -84,15 +86,15 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-left text-gray-500 text-sm"
+                  className="block text-left text-gray-500 text-sm capitalize"
                 >
-                  Email
+                  {t('contact.email')}
                 </label>
                 <input
                   type="email"
                   id="email"
                   {...register("email")}
-                  placeholder="Your Email"
+                  placeholder="email@example.com"
                   className="mt-1 w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500"
                 />
                 {errors.email && (
@@ -108,16 +110,16 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-left text-gray-500 text-sm"
+                  className="block text-left text-gray-500 text-sm capitalize"
                 >
-                  Message
+                  {t('contact.message')}
                 </label>
                 <textarea
                   id="message"
                   {...register("message")}
-                  placeholder="Your Message"
+                  placeholder={t('contact.your_message')}
                   rows={4}
-                  className="mt-1 w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                  className="mt-1 w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500 capitalize"
                 ></textarea>
                 {errors.message && (
                   <p className="text-red-500 text-sm">
@@ -128,7 +130,7 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
 
               <div className="flex justify-center">
                 <MainButton
-                  title={isSubmitting ? "Sending..." : "Send"}
+                  title={isSubmitting ? `${t('contact.sending')}...` : t('contact.send')}
                   onClick={handleSubmit(onSubmit)}
                 />
               </div>

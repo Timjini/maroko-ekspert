@@ -7,8 +7,11 @@ export interface Tour {
   price: number;
   title_en: string;
   content_en: string;
-  image_url?: string;
   description_en: string;
+  title_pl:string;
+  content_pl:string;
+  description_pl:string;
+  image_url?: string;
   imageUrls: string[];
 }
 export interface Filter {
@@ -38,8 +41,9 @@ export interface Excursion {
     price: number;
     timing: string;
     title_en: string;
-    title_pl: string;
     content_en: string;
+    title_pl:string;
+    content_pl:string;
     imageUrls: string[];
     description_en: string;
   }

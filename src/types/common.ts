@@ -20,3 +20,14 @@ export interface FormResponse {
   status: string;
   message: string;
 }
+
+export interface BookingFormValues {
+  name: string;
+  email: string;
+  phone: string;
+  numberOfPeople: number;
+  desiredDate: string;
+  tourId: string;
+  tourName: string;
+  message: string;
+}

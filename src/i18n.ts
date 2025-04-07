@@ -7,6 +7,32 @@ const resources = {
     translation: {
       welcome: "Welcome to our Travel Agency!",
       button_book: "Book Now",
+      common:{
+        marrakech:"marrakech",
+        agadir:"agadir",
+        essaouira:"essaouira",
+        attractions:"attractions",
+        price:"price",
+        excursion:"excursion",
+        meals:"meals",
+        beverages:"beverages",
+        location:"location",
+        timing:"timing",
+        included:"included",
+        duration:"duration",
+        get_an_offer:"get an offer"
+      },
+      contact:{
+        contact_us:"contact us",
+        name:"name",
+        your_name:"your name",
+        email: "E-mail",
+        phone_number:"phone number",
+        message:"message",
+        your_message:"your message",
+        sending:"sending",
+        send:"send"
+      },
       description: "Explore Morocco with the best tours from Poland.",
       hero: {
         title: "Discover Authentic Moroccan Tours",
@@ -104,6 +130,32 @@ const resources = {
   pl: {
     translation: {
       welcome: "Witamy w naszej agencji turystycznej!",
+      common:{
+        marrakech:"marrakesz",
+        agadir:"agadir",
+        essaouira:"essaouirapl",
+        attractions:"atrakcje",
+        price:"cena",
+        excursion:"wycieczka",
+        meals:"posiłki",
+        beverages:"napoje",
+        location:"lokalizacja",
+        timing:"czas",
+        included:"dołączony",
+        duration:"wycieczka",
+        get_an_offer:"otrzymaj ofertę"
+      },
+      contact:{
+        contact_us:"skontaktuj się z nami",
+        name:"imię",
+        your_name:"państwa imię",
+        email: "E-mail",
+        phone_number:"Numer telefonu",
+        message:"wiadomość",
+        your_message:"Państwa wiadomość",
+        sending:"wysyłanie",
+        send:"wyślij"
+      },
       button_book: "Zarezerwuj teraz",
       description: "Odkrywaj Maroko dzięki najlepszym wycieczkom z Polski.",
       hero: {
