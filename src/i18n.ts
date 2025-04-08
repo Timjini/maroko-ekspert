@@ -23,7 +23,8 @@ const resources = {
         included: "included",
         duration: "duration",
         get_an_offer: "get an offer",
-        city_title: "Moroccan Cities"
+        city_title: "Moroccan Cities",
+        learn_more: "learn more"
       },
       contact: {
         contact_us: "contact us",
@@ -161,7 +162,8 @@ const resources = {
         included: "dołączony",
         duration: "wycieczka",
         get_an_offer: "otrzymaj ofertę",
-        city_title: "Miasta marokańskie"
+        city_title: "Miasta marokańskie",
+        learn_more: "czytaj więcej"
       },
       contact: {
         contact_us: "skontaktuj się z nami",

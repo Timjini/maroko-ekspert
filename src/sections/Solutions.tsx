@@ -31,7 +31,7 @@ const Solutions: React.FC = () => {
               <div className="min-h-72 flex flex-col justify-between">
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{solution.title}</h3>
                 <p className="text-gray-600 py-4">{solution.description}</p>
-                <MainButton title="Learn More" onClick={() => handleRedirect(solution.url)} />
+                <MainButton title={t('common.learn_more')} onClick={() => handleRedirect(solution.url)} />
               </div>
             </div>
           ))}
