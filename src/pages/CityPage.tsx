@@ -1,4 +1,3 @@
-import React from "react";
 import TourSidebar from "../components/TourSidebar";
 import Card from "../components/Card";
 import { useParams } from "react-router-dom";
