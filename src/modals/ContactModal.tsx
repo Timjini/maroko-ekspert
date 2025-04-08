@@ -47,11 +47,11 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, toggleModal }) => {
       {isOpen && (
         <div className="modal fixed inset-0 flex items-center justify-center z-50">
           <div
-            className="absolute inset-0 bg-gray-800 bg-opacity-75"
+            className="absolute inset-0 bg-gradient-to-br from-[#fdf6ec] via-[#fbe4c1] to-[#f6c68a] bg-opacity-75"
             onClick={toggleModal}
           ></div>
 
-          <div className="relative bg-white rounded-2xl shadow-lg w-11/12 max-w-lg p-8 z-10">
+          <div className="relative glass rounded-2xl shadow-lg w-11/12 max-w-lg p-8 z-10">
             <button
               onClick={toggleModal}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 hover:cursor-pointer"

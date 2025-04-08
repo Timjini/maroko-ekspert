@@ -4,7 +4,7 @@ import { AxiosError, AxiosResponse } from 'axios';
 import { Excursion, SimilarExcursions, ExcursionResponse, UseGetToursParams } from '../types/tour';
 
 const useGetTours = (params: UseGetToursParams) => {
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [tours, setTours] = useState<Excursion[]>([]);
   const [similarExcursions, setSimilarExcursions] = useState<SimilarExcursions[]>([]);

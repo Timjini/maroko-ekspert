@@ -15,7 +15,9 @@ const LanguageSwitcher = () => {
           onClick={() => changeLanguage("en")}
           className="mx-4 cursor-pointer uppercase"
         >
-          EN 🇬🇧
+          <span className="text-2xl">
+            🇬🇧
+          </span>
         </button>
         </>
       ) : (
@@ -24,7 +26,9 @@ const LanguageSwitcher = () => {
           onClick={() => changeLanguage("pl")}
           className="mx-4 cursor-pointer uppercase"
         >
-          PL 🇵🇱
+          <span className="text-2xl">
+            🇵🇱
+          </span>
         </button>
         </>
       )}

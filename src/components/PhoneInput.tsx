@@ -44,7 +44,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({ onChange }) => {
           placeholder="123 456 7890"
           value={phoneNumber}
           onChange={handlePhoneNumberChange}
-          className="w-full pl-[6.5rem] pr-3 py-2 appearance-none bg-transparent outline-none border focus:border-slate-600 shadow-sm rounded-lg"
+          className="w-full pl-[6.5rem] pr-3 py-3 appearance-none bg-transparent outline-none border focus:border-slate-600 shadow-sm rounded-lg"
         />
       </div>
     </div>

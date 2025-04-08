@@ -1,3 +1,4 @@
+import React from "react";
 import TourSidebar from "../components/TourSidebar";
 import Card from "../components/Card";
 import { useParams } from "react-router-dom";
@@ -5,10 +6,12 @@ import useFetchTours from "../hooks/useFetchTours";
 import { formatMediaImage } from "../utils";
 import useCurrentLanguage from "../hooks/useCurrentLanguage";
 import { useTranslation } from "react-i18next";
+import Loader from "../components/Loader"; // Import your Loader component
 
 const CityPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const { filteredTours, loading, error, handleSearch } = useFetchTours(slug);
+  console.log("loading", loading);
   const { t } = useTranslation();
   const currentCity = t(`common.${slug ?? 'Result'}`);
 
@@ -25,14 +28,9 @@ const CityPage = () => {
     };
   });
 
-  // if (currentLanguage == 'en') {
-  //   title = filteredTours
-  // }
-  // else {
-
-  // }
-
-  if (loading) return <div>Loading...</div>;
+  // Show loader while loading
+  if (loading) return <Loader />;
+  
   if (error) return <div>Error: {error}</div>;
 
   return (

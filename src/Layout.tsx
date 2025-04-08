@@ -13,8 +13,10 @@ const Layout = () => {
       <Hero  toggleModal={toggleModal}/>
       <Solutions />
       <Services />
-      <Cities />
-      <About  toggleModal={toggleModal}/>
+      <section className="bg-gradient-to-br from-[#fdf6ec] via-[#fbe4c1] to-[#f6c68a]">
+        <Cities />
+        <About  toggleModal={toggleModal}/>
+      </section>
       <ContactModal isOpen={isOpen} toggleModal={toggleModal} />
 
     </>
