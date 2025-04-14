@@ -20,9 +20,9 @@ const Card: React.FC<CardProps> = ({ title, city, content, price, imageUrl, _id 
       <p className="text-sm text-gray-500 capitalize">{t(`common.${city}`)}</p>
       <div dangerouslySetInnerHTML={{ __html: content }} />
       <div className="mt-4">
-        <span className="font-semibold capitalize">{t('common.price')}: ${price}</span>
+        <span className="font-semibold capitalize">{t('common.price')}: {price === 0 ? t('common.onRequest') : `$${price}`}</span>
       </div>
-      <MainButton title={title} onClick={handleClick} />
+      <MainButton title={title.length > 20 ? `${title.slice(0, 20)}...` : title} onClick={handleClick} />
     </div>
   );
 };

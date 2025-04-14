@@ -15,6 +15,7 @@ const resources = {
         essaouira: "essaouira",
         attractions: "attractions",
         price: "price",
+        onRequest: "on request",
         excursion: "excursion",
         meals: "meals",
         beverages: "beverages",
@@ -117,7 +118,7 @@ const resources = {
             "Experience adventure with our unique packages: horseback and camel rides, a fantasy dinner night, and desert trips.",
           image:
             "https://maroko-ekspert.pl/wp-content/uploads/2024/05/essaouiar2.jpeg",
-          city: "marrakech",
+          city: "?type=adventure",
         },
       ],
       about: {
@@ -154,6 +155,7 @@ const resources = {
         essaouira: "essaouirapl",
         attractions: "atrakcje",
         price: "cena",
+        onRequest: "na życzenie",
         excursion: "wycieczka",
         meals: "posiłki",
         beverages: "napoje",
@@ -253,7 +255,7 @@ const resources = {
             "Przeżyj wyjątkowe przygody dzięki naszym unikatowym pakietom: przejażdżki konne i na wielbłądach, fantastyczna kolacja i wycieczki po pustyni.",
           image:
             "https://maroko-ekspert.pl/wp-content/uploads/2024/05/essaouiar2.jpeg",
-          city: "marrakech",
+          city: "?type=adventure",
         },
       ],
       about: {
