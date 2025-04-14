@@ -60,10 +60,10 @@ const TourSidebar = ({ onSearch }: { onSearch: (filters: Filter) => void }) => {
 
         {['Type', 'Include', 'Duration', 'Price'].map((category) => {
           const options = {
-            Type: ['excursion', 'tour', 'adventure'],
+            Type: ['excursion', 'adventure'],
             // City: ['Marrakech', 'Agadir', 'Essaouira'],
-            Include: ['Breakfast', 'Lunch', 'Dinner'],
-            Duration: ['Half Day', 'Full Day', 'Multiple Days'],
+            Include: ['Breakfast', 'Lunch'],
+            Duration: ['Half Day', 'Full Day'],
             Price: ['Under $50', '$50-$100', 'Over $100'],
           }[category];
 

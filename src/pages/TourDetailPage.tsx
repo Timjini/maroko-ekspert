@@ -129,7 +129,7 @@ const TourDetailPage = () => {
                     </tr>
                     <tr>
                       <td className="py-2 font-medium capitalize">{t('common.price')}</td>
-                      <td>€{tour.price.toFixed(2)}</td>
+                      <td>{t('common.price')}: {tour.price === 0 ? t('common.onRequest') : `€${tour.price.toFixed(2)}`}</td>
                     </tr>
                   </tbody>
                 </table>

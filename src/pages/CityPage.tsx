@@ -10,9 +10,9 @@ import Loader from "../components/Loader"; // Import your Loader component
 const CityPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const { filteredTours, loading, error, handleSearch } = useFetchTours(slug);
-  console.log("loading", loading);
+  console.log("loading", filteredTours[0]?.city);
   const { t } = useTranslation();
-  const currentCity = t(`common.${slug ?? 'Result'}`);
+  const currentCity = t(`common.${filteredTours[0]?.city ?? 'Result'}`);
 
   const currentLanguage = useCurrentLanguage();
   const formattedTours = filteredTours?.map((tour) => {
@@ -46,7 +46,7 @@ const CityPage = () => {
               <Card
                 key={tour._id}
                 title={tour.title}
-                city={tour.city}
+                city={currentCity}
                 content={tour.description.slice(0, 150) + "..."}
                 price={tour.price}
                 imageUrl={tour.imageUrl}

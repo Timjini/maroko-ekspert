@@ -13,6 +13,7 @@ const resources = {
         marrakech: "marrakech",
         agadir: "agadir",
         essaouira: "essaouira",
+        Marrakech: "marrakech",
         attractions: "attractions",
         price: "price",
         onRequest: "on request",
